@@ -44,6 +44,7 @@ const newGrocery = (e) => {
         type: 'grocery/add',
         text: groceryText
     })
+    document.getElementById('newItem').value = ''
     console.log(store.getState())
 }
 
@@ -71,5 +72,5 @@ const render = () => {
 store.subscribe(render)
 
 // Event listeners
-grocerySubmit.addEventListener('click', (e) => {newGrocery(e)})
+grocerySubmit.addEventListener('submit', (e) => {newGrocery(e)})
 clearBtn.addEventListener('click', clearList)
